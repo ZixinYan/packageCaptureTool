@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}抓包结果</title>
+    <style>
+        h1{
+            padding:5px 0 0 5px
+        }
+        p{
+            color: red;
+            font-family: cursive;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>ARP抓包结果</h1>
+    <a href="{% url 'download_pcap' %}">Download PCAP File</a>
+    <p>文件在下次使用功能会被替换，请及时下载</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Source IP</th>
+                <th>Destination IP</th>
+                <th>Source MAC</th>
+                <th>Destination MAC</th>
+                <th>Length</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for packet in packets %}
+            <tr>
+                <td>{{ packet.src_ip }}</td>
+                <td>{{ packet.dst_ip }}</td>
+                <td>{{ packet.hwsrc }}</td>
+                <td>{{ packet.hwdst }}</td>
+                <td>{{ packet.length }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

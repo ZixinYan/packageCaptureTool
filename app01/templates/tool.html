@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络抓包</title>
+     <script>
+        function captureInput(baseUrl) {
+            var device = prompt("请输入网络设备名称:", "");
+            var num_packets = prompt("请输入抓包数量:", "");
+
+            if (device != null && num_packets != null) {
+                window.open(baseUrl + "?device=" + device + "&num_packets=" + num_packets, '_blank');
+            }
+        }
+        function captureInput2(baseUrl) {
+            var device = prompt("请输入网络设备名称:", "");
+
+            if (device != null) {
+                window.open(baseUrl + "?device=" + device, '_blank');
+            }
+        }
+    </script>
+    <style>
+        h1{
+            padding: 0 20px;
+            user-select: none;
+        }
+        li{
+          padding: 13px;
+          background-color: aliceblue;
+        }
+        .tool{
+            padding: 5px 10px;
+            margin-top: 10px;
+            background-color: aliceblue;
+            border: 1px;
+            border-style: dashed;
+            text-align: center;
+            font-family: cursive;
+            text-decoration: none;
+            font-style: italic;
+            color: black;
+            user-select: none;
+        }
+        div{
+            width: 300px;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <h1>网络工具</h1>
+    <div>
+    <ul id="toolList">
+        <li><a href="information" class="tool">查看网络设备信息</a></li>
+        <li><a href="javascript:void(0);" onclick="captureInput2('/tool/datalinkType')" class="tool">查看链路层连接信息</a></li>
+        <li><a href="javascript:void(0);" onclick="captureInput('/tool/all_running')" class="tool">捕获数据包</a></li>
+        <li><a href="javascript:void(0);" onclick="captureInput('/tool/ether_running')" class="tool">捕获以太网数据报</a></li>
+        <li><a href="javascript:void(0);" onclick="captureInput('/tool/arp_running')" class="tool">捕获ARP数据包</a></li>
+        <li><a href="javascript:void(0);" onclick="captureInput('/tool/ip_running')" class="tool">捕获IP数据包</a></li>
+        <li><a href="javascript:void(0);" onclick="captureInput('/tool/tcp_running')" class="tool">捕获TCP数据包</a></li>
+        <li><a href="javascript:void(0);" onclick="captureInput('/tool/udp_running')" class="tool">捕获UDP数据包</a></li>
+        <li><a href="javascript:void(0);" onclick="captureInput('/tool/icmp_running')" class="tool">捕获ICMP数据包</a></li>
+    </ul>
+    </div>
+
+</body>
+</html>

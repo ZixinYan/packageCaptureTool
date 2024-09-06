@@ -1,0 +1,33 @@
+Device: ens160
+Description: (none)
+IP Address: 192.168.237.130
+Subnet Mask: 255.255.255.0
+
+Device: any
+Description: Pseudo-device that captures on all interfaces
+
+Device: lo
+Description: (none)
+IP Address: 127.0.0.1
+Subnet Mask: 255.0.0.0
+
+Device: docker0
+Description: (none)
+IP Address: 172.17.0.1
+Subnet Mask: 255.255.0.0
+
+Device: usbmon2
+Description: Raw USB traffic, bus number 2
+
+Device: usbmon1
+Description: Raw USB traffic, bus number 1
+
+Device: usbmon0
+Description: Raw USB traffic, all USB buses
+
+Device: nflog
+Description: Linux netfilter log (NFLOG) interface
+
+Device: nfqueue
+Description: Linux netfilter queue (NFQUEUE) interface
+

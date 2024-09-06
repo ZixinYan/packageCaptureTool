@@ -1,0 +1,3 @@
+Device: ens160
+Datalink Type: 1
+DLT_EN10MB: Ethernet (10Mb)
